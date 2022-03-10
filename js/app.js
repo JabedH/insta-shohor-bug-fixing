@@ -57,10 +57,10 @@ const switchTab = (id) => {
 };
 
 const createPost = (post) => {
-  console.log(post);
+  console.log(post.comments[0].text);
   let description;
   if (post.description.length > 30) {
-    description = post.description.slice(0, 30) + " see more";
+    description = post.description.slice(0, 30) + " ..see more";
   } else {
     description = post.description;
   }
@@ -135,7 +135,7 @@ const createPost = (post) => {
                   <div class="post__description">
                     <small>
                       <a class="post__name--underline" href="#">
-                          ${post.comments?.user}
+                          ${post.comments[0].text}
                       </a>
                       ${post.comments?.text}
                     </small>
