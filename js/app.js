@@ -57,7 +57,7 @@ const switchTab = (id) => {
 };
 
 const createPost = (post) => {
-  console.log(post.comments[0].text);
+  console.log(post.comments);
   let description;
   if (post.description.length > 30) {
     description = post.description.slice(0, 30) + " ..see more";
@@ -137,7 +137,7 @@ const createPost = (post) => {
                       <a class="post__name--underline" href="#">
                           ${post.comments[0].text}
                       </a>
-                      ${post.comments?.text}
+                      ${post.comments[0].text}
                     </small>
                   </div>
                   <span class="post__date-time">30 minutes ago</span>
