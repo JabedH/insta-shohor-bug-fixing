@@ -58,6 +58,12 @@ const switchTab = (id) => {
 
 const createPost = (post) => {
   console.log(post);
+  let description;
+  if (post.description.length > 30) {
+    description = post.description.slice(0, 30) + " see more";
+  } else {
+    description = post.description;
+  }
   const image = post.image;
   const div = document.createElement("article");
   div.classList.add("post");
@@ -111,9 +117,7 @@ const createPost = (post) => {
                   </button>
                 </div>
 
-                <div class="post__content">${displayContent(
-                  post.description
-                )}</div>
+                <div class="post__content">${description}</div>
 
                 <div class="post__infos">
                   <div class="post__likes">
